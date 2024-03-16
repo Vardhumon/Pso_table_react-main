@@ -15,12 +15,13 @@ axios.defaults.withCredentials = true;
 function App() {
   return (
     <Router>
-      <Navbar />
+      {/* <Navbar /> */}
       <Toaster position='bottom-right' toastOptions={{ duration: 2000 }} />
       <Routes>
-        <Route path='/' element={<Home />} />
+        {/* <Route path='/' element={<Home />} />
         <Route path='/register' element={<Register />} />
-        <Route path='/login' element={<Login />} />
+        <Route path='/login' element={<Login />} /> */}
+      <Route path='/' element={<Login />} />
       </Routes>
     </Router>
   );
