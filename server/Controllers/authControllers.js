@@ -50,7 +50,9 @@ const loginUser = async(req,res)=>{
         };
         if(user){
             return res.json({
-                error:" user found"
+                success:true,
+                message:"Login successful",
+                navigator:"/table"
             })
         };
           

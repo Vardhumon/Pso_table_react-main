@@ -41,18 +41,31 @@ const route = express.Router();
                               return (value / 10) * 100; // Default formula for other PO columns
                       }
                   });
+                  const customPercentagesPso = item.pso.map((value, index) => {
+                    switch (index) {
+                        case 0: // For PO1
+                            return (value / 14) * 100;
+                        case 1: // For PO2
+                            return (value / 6) * 100;
+                        // Add more cases for other PO columns if needed
+                        default:
+                            return (value / 10) * 100; // Default formula for other PO columns
+                    }
+                });
   
                   // Save the custom percentage data to PercentageModel
                   const customPercentageModel = new PercentageModel({
                       co: item.co,
                       percentage_po: customPercentages, // Update the field name
-                  });
+                      percentage_pso: customPercentagesPso
+                    });
   
                   await customPercentageModel.save();
   
                   return {
                       co: item.co,
                       poPercentage: customPercentages,
+                      psoPercentage: customPercentagesPso,
                   };
               })
           );

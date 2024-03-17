@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-
+import './percentage.css'
 const PercentageTable = () => {
   const [data, setData] = useState([]);
 
@@ -18,8 +18,8 @@ const PercentageTable = () => {
   };
 
   return (
-    <div className="container-fluid vh-100 vw-100 custom-table overflow-auto py-5">
-      <div className="container-fluid h-80 vw-100 custom-table overflow-auto">
+    <div className="container-fluid vh-100 vw-100 custom-table  py-5">
+      <div className="container-fluid h-80 vw-100 custom-table ">
         <div className="container-fluid bg-light text-dark px-3 cusTable p-2 fs-4 border border-3 border-danger">
           <div className="row bg-light text-dark px-2 no-wrap fs-4 d-flex justify-content-center font-weight-bold">
             <div className="col-1 fs-3 fw-bold">Course Outcome</div>
@@ -27,9 +27,9 @@ const PercentageTable = () => {
               <div className="row program-outcomes d-flex justify-content-center fs-3 fw-bold">
                 Program Outcomes (PO)
               </div>
-              <div className="row">
+              <div className="row px-2">
                 {[...Array(12).keys()].map((index) => (
-                  <div className="col fs-5" key={index}>
+                  <div className="col fs-5 px-1" key={index}>
                     PO{index + 1}
                   </div>
                 ))}
@@ -39,7 +39,7 @@ const PercentageTable = () => {
               <div className="row program-specific-outcome d-flex justify-content-center fs-5 fw-bold">
                 Program Specific Outcomes
               </div>
-              <div className="row">
+              <div className="row px-4">
                 {[...Array(3).keys()].map((index) => (
                   <div className="col fs-5 py-3" key={index}>
                     PSO{index + 1}
@@ -54,18 +54,18 @@ const PercentageTable = () => {
           {/* Entries */}
           {Array.isArray(data) && data.map((item, index) => (
             <div className="row" key={index}>
-              <div className="col-1">{item.co}</div>
+              <div className="col-1 px-5">{item.co}</div>
               
               {/* Display custom percentages for each PO column */}
               {Array.isArray(item.poPercentage) && item.poPercentage.map((poPercentage, poIndex) => (
-                <div className="col fs-5 me-4" key={poIndex}>
+                <div className="col fs-5 px-4 me-3" key={poIndex}>
                   {poPercentage.toFixed(1)}%
                 </div>
               ))}
               
               {/* Additional columns for PSO percentages */}
               {Array.isArray(item.psoPercentage) && item.psoPercentage.map((psoPercentage, psoIndex) => (
-                <div className="col" key={psoIndex}>
+                <div className="col fs-5 pso-table px-3" key={psoIndex} style={{position:"relative",left:"35px", textAlign:"center",}}>
                   {psoPercentage.toFixed(1)}%
                 </div>
               ))}

@@ -6,10 +6,10 @@ import PsoTable from "./Screens/Psotable";
 import Header from "./components/Header";
 
 
-function App() {
+function AppPso() {
   return (
     <>
-      <div className="overflow-hidden bg-light">
+      <div className="overflow-hidden bg-light vh-100 vw-100 container-fluid">
         <Header />
         <PsoTable />
       </div>
@@ -19,4 +19,4 @@ function App() {
   );
 }
 
-export default App;
+export default AppPso;
