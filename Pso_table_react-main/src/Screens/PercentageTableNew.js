@@ -1,73 +1,22 @@
 
-
-
-
-
-
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import PsoRow from "../components/PsoRow";
-import PercentageTable from "./percentage"; // Assuming the correct path
-import PercentageTableNew from "./PercentageTableNew";
+import PercentageRow from "../components/PercentageRow";
 
-const PsoTable = () => {
+const PercentageTableNew = () => {
   const [data, setData] = useState([]);
-  const [showPercentages, setShowPercentages] = useState(false);
-
   useEffect(() => {
     fetchData();
   }, []);
 
   const fetchData = async () => {
     try {
-      const response = await axios.get("http://localhost:8000");
-      // Assuming response.data is an array
+      const response = await axios.get("http://localhost:8000/calculatePercentage");
       setData(response.data);
+      console.log(data);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
-  };
-
-  const handleRowSave = async (editedCo, editedPo, editedPso) => {
-    try {
-      await axios.post("http://localhost:8000/save", {
-        co: editedCo,
-        po: editedPo,
-        pso: editedPso,
-      });
-      fetchData();
-    } catch (error) {
-      console.error("Error saving data:", error);
-    }
-  };
-
-  const addRowCheck = () => {
-    
-    if (data.length > 0) {
-      const coNumber6Exists = data.some(item => item.co === 'CO6');
-      return coNumber6Exists;
-    }
-    return addRow();
-  };
-
-  const addRow = async () => {
-    try {
-      const newCo = `CO${data.length + 1}`;
-      const newRow = {
-        co: newCo,
-        po: Array(12).fill(0),
-        pso: Array(3).fill(0),
-      };
-
-      await axios.post("http://localhost:8000/save", newRow);
-      fetchData();
-    } catch (error) {
-      console.error("Error adding row:", error);
-    }
-  };
-
-  const handleSubmit = () => {
-    setShowPercentages(true);
   };
 
   return (
@@ -105,42 +54,21 @@ const PsoTable = () => {
           {/* Entries */}
           {Array.isArray(data) &&
             data.map((item, index) => (
-              <PsoRow
+              <PercentageRow
                 key={index}
                 co={item.co}
-                po={item.po}
-                pso={item.pso}
-                onSave={handleRowSave}
+                po={item.poPercentage}
+                pso={item.psoPercentage}
               />
             ))}
-
-          {/* Add row button */}
-          <div className="row">
-            <div className="col">
-              <button className="btn btn-warning mt-2" onClick={addRow} disabled={addRowCheck()}>
-                Add Row
-              </button>
-            </div>
-          </div>
-
-          {/* Submit button */}
-          <div className="row mt-2">
-            <div className="col">
-              <button className="btn btn-success" onClick={handleSubmit}>
-                Submit
-              </button>
-            </div>
-          </div>
         </div>
       </div>
 
-      {/* Percentage Table */}
-      {showPercentages && <PercentageTableNew />}
     </div>
   );
 };
 
-export default PsoTable;
+export default PercentageTableNew;
 
 
 

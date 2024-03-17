@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import './percentage.css'
 const PercentageTable = () => {
   const [data, setData] = useState([]);
 
@@ -12,12 +11,13 @@ const PercentageTable = () => {
     try {
       const response = await axios.get("http://localhost:8000/calculatePercentage");
       setData(response.data);
+      console.log(data);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
   };
 
-  return (
+  return (  
     <div className="container-fluid vh-100 vw-100 custom-table  py-5">
       <div className="container-fluid h-80 vw-100 custom-table ">
         <div className="container-fluid bg-light text-dark px-3 cusTable p-2 fs-4 border border-3 border-danger">
