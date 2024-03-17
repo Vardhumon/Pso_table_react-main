@@ -1,13 +1,7 @@
 
-
-
-
-
-
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import PsoRow from "../components/PsoRow";
-import PercentageTable from "./percentage"; // Assuming the correct path
 import PercentageTableNew from "./PercentageTableNew";
 
 const PsoTable = () => {

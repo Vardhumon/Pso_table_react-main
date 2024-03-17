@@ -1,5 +1,5 @@
 // PsoRow.js
-import React, { useState } from "react";
+import React from "react";
 
 
 
@@ -8,7 +8,7 @@ function PercentageRow({ co, po, pso }) {
 
   return (
     <div className="row border" style={{ display: "flex" }}>
-      <div className="col-1 ps-4 py-2 fs-5 pe-1" style={{ marginLeft: "" }}>{co}
+      <div className="col-1 ps-4 py-2 fs-5 pe-1" style={{ marginLeft: "" }}>${co}
       </div>
       <div className="col-9 px-4 pe-1 fs-5">
         <div className="row p-2 ">
