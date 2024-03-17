@@ -61,7 +61,7 @@ function PsoRow({ co, po, pso, onSave }) {
           )}
         </div>
       </div>
-      <div className="col-2 py-2 pe-1 fs-5">
+      <div className="col-2 py-2 ps-5 px-1  fs-5">
         <div className="row">
           {isEditing ? (
             editedPso.map((item, index) => (
