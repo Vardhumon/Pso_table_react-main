@@ -42,6 +42,7 @@ function PsoRow({ co, po, pso, onSave }) {
               <div className="col" key={index}>
                 <input
                   type="number"
+                  min={0}
                   value={item}
                   onChange={(e) => {
                     const newPo = [...editedPo];
@@ -69,6 +70,7 @@ function PsoRow({ co, po, pso, onSave }) {
                 <input
                   type="number"
                   value={item}
+                  min={0}
                   onChange={(e) => {
                     const newPso = [...editedPso];
                     newPso[index] = e.target.value;

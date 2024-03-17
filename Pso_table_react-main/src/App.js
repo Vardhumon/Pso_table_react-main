@@ -1,5 +1,7 @@
 
 import "./App.css";
+import CourseObjectiveTable from "./Screens/CourseObjectiveTable";
+import CourseOutcome from "./Screens/CourseOutcomeTable";
 
 
 import PsoTable from "./Screens/Psotable";
@@ -9,9 +11,10 @@ import Header from "./components/Header";
 function AppPso() {
   return (
     <>
-      <div className="overflow-hidden bg-light vh-100 vw-100 container-fluid">
+      <div className="bg-light vh-100 vw-100 container-fluid">
         <Header />
-        <PsoTable />
+        <CourseObjectiveTable />
+        <CourseOutcome />
       </div>
     
     
