@@ -37,7 +37,7 @@ function Temp3() {
     const [totalStudents, setTotalStudents] = useState(4);
 
     const [CO1, setCO1] = useState(
-        [[10, 12, 15, 21, 22], [15, 26, 15, 21], [1, 2, 3, 4], [23, 123, 12]]
+        [[10, 12, 15, 21], [15, 26, 15, 21], [1, 2, 3, 4], [23, 123, 12]]
     );
     const [totalCO1, settotalCO1] = useState([]);
 
@@ -303,15 +303,16 @@ function Temp3() {
 
             <table className="table table-hover table-light table-bordered w-75 mt-5">
                 <thead className='ms-2'>
-                    <tr className='ms-2 text-center table-primary sticky-top'>
+                    <tr className='ms-2 text-center table-danger sticky-top'>
                         <th scope="col ">Sr.no </th>
-                        <th scope="col">PRN No.</th>
-                        <th scope="col">Roll No.</th>
-                        <th scope="col">Student Name</th>
+                        <th scope="col" style={{ minWidth: "150px" }}>PRN No.</th>
+                        <th scope="col"
+                            style={{ minWidth: "150px" }}>Roll No.</th>
+                        <th scope="col" style={{ minWidth: "250px" }} >Student Name</th>
                         <th scope="col">ESE(70)</th>
-                        <th scope="col">In-Sem(30)</th>
+                        <th scope="col">InSem(30)</th>
                         <th scope="col">PR/OR(25)</th>
-                        <th scope="col">Term Work(25)</th>
+                        <th scope="col">TermWork(25)</th>
                         <th scope="col">Total(150)</th>
                         <th className='text-center' scope='col' style={{ minWidth: "100px" }}>CO1<br></br>UT-1(30)</th>
                         <th className='text-center' scope='col' style={{ minWidth: "100px" }}>CO1<br></br>CW</th>
@@ -348,7 +349,7 @@ function Temp3() {
                             {/* PRN nO */}
                             <td><span>
                                 {editIndex === index ? (
-                                    <input type="text" className="form-control form-control-sm fs-5" value={editedPRN[index]} onChange={(event) => handleInputChange2(event, index)} style={{ maxWidth: "150px" }} />
+                                    <input type="text" className="form-control form-control-sm" value={editedPRN[index]} onChange={(event) => handleInputChange2(event, index)} style={{ maxWidth: "150px" }} />
                                 ) : (
                                     <span>{prn[index]}</span>
                                 )}
@@ -357,7 +358,7 @@ function Temp3() {
                             {/* ROLL NO   */}
                             <td><span>
                                 {editIndex === index ? (
-                                    <input type="text" className="form-control form-control-sm fs-5" value={editedRoll[index]} onChange={(event) => handleInputChange1(event, index)} style={{ maxWidth: "150px", position: "sticky" }} />
+                                    <input type="text" className="form-control form-control-sm" value={editedRoll[index]} onChange={(event) => handleInputChange1(event, index)} style={{ maxWidth: "150px", position: "sticky" }} />
                                 ) : (
                                     <span>{roll[index]}</span>
                                 )}
@@ -366,7 +367,7 @@ function Temp3() {
                             {/* NAME */}
                             <td><span>
                                 {editIndex === index ? (
-                                    <input type="text" className="form-control form-control-sm fs-5" value={editedName[index]} onChange={(event) => handleInputChange(event, index)} style={{}} />
+                                    <input type="text" className="form-control form-control-sm " value={editedName[index]} onChange={(event) => handleInputChange(event, index)} style={{ fontSize: "16px" }} />
                                 ) : (
                                     <span>{name[index]}</span>
                                 )}
@@ -376,7 +377,7 @@ function Temp3() {
                             <td className='text-center'>
                                 <span>
                                     {editIndex === index ? (
-                                        <input type="number" className="form-control form-control-sm fs-5" value={editedEse[index]} onChange={(event) => handleInputChange3(event, index)} style={{ maxWidth: "80px" }} max={70} min={0} />
+                                        <input type="number" className="form-control form-control-sm " value={editedEse[index]} onChange={(event) => handleInputChange3(event, index)} style={{ maxWidth: "80px" }} max={70} min={0} />
                                     ) : (
                                         <span>{ese[index]}</span>
                                     )}
@@ -387,7 +388,7 @@ function Temp3() {
                             <td className='text-center'>
                                 <span>
                                     {editIndex === index ? (
-                                        <input type="number" className="form-control form-control-sm fs-5" value={editedMid[index]} onChange={(event) => handleInputChange4(event, index)} style={{ maxWidth: "80px" }} max={30} min={0} />
+                                        <input type="number" className="form-control form-control-sm " value={editedMid[index]} onChange={(event) => handleInputChange4(event, index)} style={{ maxWidth: "80px" }} max={30} min={0} />
                                     ) : (
                                         <span>{midsem[index]}</span>
                                     )}
@@ -398,7 +399,7 @@ function Temp3() {
                             <td className='text-center'>
                                 <span>
                                     {editIndex === index ? (
-                                        <input type="number" className="form-control form-control-sm fs-5" value={editedPror[index]} onChange={(event) => handleInputChange5(event, index)} style={{ maxWidth: "80px" }} max={25} min={0} />
+                                        <input type="number" className="form-control form-control-sm " value={editedPror[index]} onChange={(event) => handleInputChange5(event, index)} style={{ maxWidth: "80px" }} max={25} min={0} />
                                     ) : (
                                         <span>{pr_or[index]}</span>
                                     )}
@@ -409,7 +410,7 @@ function Temp3() {
                             <td className='text-center'>
                                 <span>
                                     {editIndex === index ? (
-                                        <input type="number" className="form-control form-control-sm fs-5" value={editedTermwork[index]} onChange={(event) => handleInputChange6(event, index)} style={{ maxWidth: "80px" }} max={25} min={0} />
+                                        <input type="number" className="form-control form-control-sm " value={editedTermwork[index]} onChange={(event) => handleInputChange6(event, index)} style={{ maxWidth: "80px" }} max={25} min={0} />
                                     ) : (
                                         <span>{termwork[index]}</span>
                                     )}
@@ -425,7 +426,7 @@ function Temp3() {
                             <td className='text-center'>
                                 <span>
                                     {editIndex === index ? (
-                                        <input type="number" className="form-control form-control-sm fs-5" value={editedCO1[0][index]} onChange={(event) => handleInputChangeCO1UT1(event, index)} style={{ maxWidth: "80px" }} max={25} min={0} />
+                                        <input type="number" className="form-control form-control-sm " value={editedCO1[0][index]} onChange={(event) => handleInputChangeCO1UT1(event, index)} style={{ maxWidth: "80px" }} max={25} min={0} />
                                     ) : (
                                         <span>{CO1[0][index]}</span>
                                     )}
@@ -436,7 +437,7 @@ function Temp3() {
                             <td className='text-center'>
                                 <span>
                                     {editIndex === index ? (
-                                        <input type="number" className="form-control form-control-sm fs-5" value={editedCO1[1][index]} onChange={(event) => handleInputChangeCO1CW(event, index)} style={{ maxWidth: "80px" }} max={25} min={0} />
+                                        <input type="number" className="form-control form-control-sm " value={editedCO1[1][index]} onChange={(event) => handleInputChangeCO1CW(event, index)} style={{ maxWidth: "80px" }} max={25} min={0} />
                                     ) : (
                                         <span>{CO1[1][index]}</span>
                                     )}
@@ -453,7 +454,7 @@ function Temp3() {
                             <td className='text-center'>
                                 <span>
                                     {editIndex === index ? (
-                                        <input type="number" className="form-control form-control-sm fs-5" value={editedCO2[0][index]} onChange={(event) => handleInputChangeCO2UT1(event, index)} style={{ maxWidth: "80px" }} max={25} min={0} />
+                                        <input type="number" className="form-control form-control-sm " value={editedCO2[0][index]} onChange={(event) => handleInputChangeCO2UT1(event, index)} style={{ maxWidth: "80px" }} max={25} min={0} />
                                     ) : (
                                         <span>{CO2[0][index]}</span>
                                     )}
@@ -464,7 +465,7 @@ function Temp3() {
                             <td className='text-center'>
                                 <span>
                                     {editIndex === index ? (
-                                        <input type="number" className="form-control form-control-sm fs-5" value={editedCO2[1][index]} onChange={(event) => handleInputChangeCO2CW(event, index)} style={{ maxWidth: "80px" }} max={25} min={0} />
+                                        <input type="number" className="form-control form-control-sm " value={editedCO2[1][index]} onChange={(event) => handleInputChangeCO2CW(event, index)} style={{ maxWidth: "80px" }} max={25} min={0} />
                                     ) : (
                                         <span>{CO2[1][index]}</span>
                                     )}
@@ -481,7 +482,7 @@ function Temp3() {
                             <td className='text-center'>
                                 <span>
                                     {editIndex === index ? (
-                                        <input type="number" className="form-control form-control-sm fs-5" value={editedCO3[0][index]} onChange={(event) => handleInputChangeCO3UT2(event, index)} style={{ maxWidth: "80px" }} max={25} min={0} />
+                                        <input type="number" className="form-control form-control-sm " value={editedCO3[0][index]} onChange={(event) => handleInputChangeCO3UT2(event, index)} style={{ maxWidth: "80px" }} max={25} min={0} />
                                     ) : (
                                         <span>{CO3[0][index]}</span>
                                     )}
@@ -492,7 +493,7 @@ function Temp3() {
                             <td className='text-center'>
                                 <span>
                                     {editIndex === index ? (
-                                        <input type="number" className="form-control form-control-sm fs-5" value={editedCO3[1][index]} onChange={(event) => handleInputChangeCO3CW(event, index)} style={{ maxWidth: "80px" }} max={25} min={0} />
+                                        <input type="number" className="form-control form-control-sm " value={editedCO3[1][index]} onChange={(event) => handleInputChangeCO3CW(event, index)} style={{ maxWidth: "80px" }} max={25} min={0} />
                                     ) : (
                                         <span>{CO3[1][index]}</span>
                                     )}
@@ -508,7 +509,7 @@ function Temp3() {
                             <td className='text-center'>
                                 <span>
                                     {editIndex === index ? (
-                                        <input type="number" className="form-control form-control-sm fs-5" value={editedCO4[0][index]} onChange={(event) => handleInputChangeCO4UT2(event, index)} style={{ maxWidth: "80px" }} max={25} min={0} />
+                                        <input type="number" className="form-control form-control-sm " value={editedCO4[0][index]} onChange={(event) => handleInputChangeCO4UT2(event, index)} style={{ maxWidth: "80px" }} max={25} min={0} />
                                     ) : (
                                         <span>{CO4[0][index]}</span>
                                     )}
@@ -519,7 +520,7 @@ function Temp3() {
                             <td className='text-center'>
                                 <span>
                                     {editIndex === index ? (
-                                        <input type="number" className="form-control form-control-sm fs-5" value={editedCO4[1][index]} onChange={(event) => handleInputChangeCO4CW(event, index)} style={{ maxWidth: "80px" }} max={25} min={0} />
+                                        <input type="number" className="form-control form-control-sm " value={editedCO4[1][index]} onChange={(event) => handleInputChangeCO4CW(event, index)} style={{ maxWidth: "80px" }} max={25} min={0} />
                                     ) : (
                                         <span>{CO4[1][index]}</span>
                                     )}
@@ -538,7 +539,7 @@ function Temp3() {
                             <td className='text-center'>
                                 <span>
                                     {editIndex === index ? (
-                                        <input type="number" className="form-control form-control-sm fs-5" value={editedCO5[0][index]} onChange={(event) => handleInputChangeCO5CW(event, index)} style={{ maxWidth: "80px" }} max={25} min={0} />
+                                        <input type="number" className="form-control form-control-sm " value={editedCO5[0][index]} onChange={(event) => handleInputChangeCO5CW(event, index)} style={{ maxWidth: "80px" }} max={25} min={0} />
                                     ) : (
                                         <span>{CO5[0][index]}</span>
                                     )}
@@ -557,7 +558,7 @@ function Temp3() {
                             <td className='text-center'>
                                 <span>
                                     {editIndex === index ? (
-                                        <input type="number" className="form-control form-control-sm fs-5" value={editedCO6[0][index]} onChange={(event) => handleInputChangeCO6CW(event, index)} style={{ maxWidth: "80px" }} max={25} min={0} />
+                                        <input type="number" className="form-control form-control-sm " value={editedCO6[0][index]} onChange={(event) => handleInputChangeCO6CW(event, index)} style={{ maxWidth: "80px" }} max={25} min={0} />
                                     ) : (
                                         <span>{CO6[0][index]}</span>
                                     )}
