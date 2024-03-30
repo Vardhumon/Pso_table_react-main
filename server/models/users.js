@@ -6,7 +6,15 @@ const userSchema = new Schema({
         type: String,
         unique: true
     },
-    password: String
+    password: String,
+    psoId: {
+        type: Schema.Types.ObjectId,
+        ref: 'Pso' // Reference to PSO model
+    },
+    percentageId: {
+        type: Schema.Types.ObjectId,
+        ref: 'PercentageModel' // Reference to Percentage model
+    }
 })
 
 const UserModel = mongoose.model('User', userSchema);

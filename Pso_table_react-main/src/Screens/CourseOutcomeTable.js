@@ -39,7 +39,7 @@ function CourseOutcome() {
                     </div>
                     {data.map((item, index) => (
                         <div className="row align-items-center hover-overlay" key={index}>
-                            <div className="col-6 border border-2 px-2 py-3 fs-4 w-25 d-inline-flex align-items-center justify-content-start hover-shadow">
+                            <div className="col-6 border border-2 px-2 py-3 fs-4 w-25 d-inline-flex align-items-center ">
                                 <span>{`CO502.${index + 1}`}</span>
                                 <div>
                                     {editIndex === index ? (

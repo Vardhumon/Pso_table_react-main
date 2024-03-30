@@ -65,7 +65,7 @@ const PsoTable = () => {
   };
 
   return (
-    <div className="container-fluid vh-100 vw-100 custom-table overflow-auto py-5">
+    <div className="container-fluid vh-100 vw-100 custom-table overflow-auto py-5 " style={{margin:"0px", padding:"0px"}}>
       <div className="container-fluid h-80 vw-100  custom-table overflow-auto">
         <div className="container-fluid bg-light text-dark px-3 cusTable p-2 border border-3 border-danger mb-5" >
           <div className="row bg-light text-dark no-wrap fs-4 d-flex justify-content-center font-weight-bold">

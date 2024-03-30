@@ -23,7 +23,8 @@ router.get('/', async (req, res) => {
  router.post('/save', async (req, res) => {
     try {
       const { co, po, pso } = req.body;
-  
+      const psoId = [];
+      
       if (!co || !po || !pso) {
         return res.status(400).json({ message: 'Invalid request data' });
       }
